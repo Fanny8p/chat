@@ -26,9 +26,9 @@ if(!empty($_POST)){
   if (count($errors) == 0) {
     $query = "INSERT INTO message (message,time,chatroom_id) 
     VALUES('$message', '$time' , '$chatroom_id')";
-  $stmt= $dbh->prepare($query);
-  $stmt->execute();
-  }
+    $stmt= $dbh->prepare($query);
+    $stmt->execute();
+}
 }
 ?>
 
