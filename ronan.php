@@ -1,12 +1,12 @@
 <?php
-$title = "Accueil";
+$title = "Ronan";
 $description = "Ma description";
 ?>
 
 <?php include_once("layout/header.php"); ?>
 
 
-//MON CODE
+Le profil de Ronan
 
 
 <?php include_once("layout/footer.php"); ?>
