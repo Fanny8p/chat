@@ -1,10 +1,11 @@
-</head>
 <?php
-// test 
-    ini_set("display_errors", 1);
-    include("db.php");
-    $title = "Chatbox";
+$title = "";
+$description = "Ma description";
+?>
 
+<?php include_once("layout/header.php"); ?>
+<?php
+ $chatroom_id = $_GET["id"];
     // initializing variables
 $message = "";
 $time    = "";
@@ -15,17 +16,18 @@ $db = mysqli_connect('localhost', 'root', 'root', 'chat');
 if(!empty($_POST)){
 // SEND IN THE DB
 
-  $message = mysqli_real_escape_string($db, $_POST['message']);
+  $message = $_POST['message'];
   $time = date("Y-m-d H:i");
 
   if (empty($message)) {
   	array_push($errors, "message is required");
   }
-
+ 
   if (count($errors) == 0) {
-    $query = "INSERT INTO message (message,time) 
-    VALUES('$message', '$time')";
-mysqli_query($db, $query) or die(mysqli_error ($db));
+    $query = "INSERT INTO message (message,time,chatroom_id) 
+    VALUES('$message', '$time' , '$chatroom_id')";
+  $stmt= $dbh->prepare($query);
+  $stmt->execute();
   }
 }
 ?>
@@ -34,7 +36,7 @@ mysqli_query($db, $query) or die(mysqli_error ($db));
  //afficher un message sur le tchat
 
 // on crée la requête SQL 
-$sql = 'SELECT message, time FROM message'; 
+$sql = "SELECT message, time FROM message WHERE chatroom_id=$chatroom_id"; 
 
 // on envoie la requête 
 $req = mysqli_query($db,$sql) or die('Erreur SQL !<br>'.$sql.'<br>'.mysqli_error($db)); 
@@ -49,15 +51,6 @@ while($data = mysqli_fetch_assoc($req))
 
 ?> 
 
-
-<?php include("top.php"); ?>
-<?php include('server.php') ?>
-<?php include('layout/footer.php') ?>
-<title><?php echo $title; ?></title>
-  
-  
-  <body>  
-
   <form id="messageForm" method=post>
     <input id="message" name="message" type="text">
     <input id="send" type="submit" value="Send">
@@ -65,5 +58,4 @@ while($data = mysqli_fetch_assoc($req))
 
 </form>
 
-</body>
-</html>
+<?php include_once("layout/footer.php"); ?>
