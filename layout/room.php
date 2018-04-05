@@ -1,6 +1,6 @@
 </head>
 <?php
-
+// test 
     ini_set("display_errors", 1);
     include("db.php");
     $title = "Chatbox";
