@@ -1,7 +1,7 @@
 
 <?php 
 
-$db = mysqli_connect('localhost', 'root', '', 'chat');
+$db = mysqli_connect('localhost', 'root', 'root', 'chat');
 
 $name = "";
 $errors = array(); 
@@ -35,6 +35,32 @@ while($data = mysqli_fetch_assoc($req))
 
     }
     ?>
+
+  <?php
+  // envoie nom de la room
+
+  $chatroom = mysqli_real_escape_string($db, $_POST['name']);
+ 
+  if (empty($name)) {
+  	array_push($errors, "name is required");
+  }
+
+  if (count($errors) == 0) {
+    $query = "INSERT INTO chatroom (name) 
+    VALUES('$name')";
+mysqli_query($db, $query) or die(mysqli_error ($db));
+  }
+?>
+
+     
+     <form id="messageForm" method=post>
+       <input id="name" name="name" type="text">
+       <input id="send" type="submit" value="Send">
+       <div id="serverRes"></div>
+   
+   </form>
+   
+
 </div>
 
 <!-- Use any element to open the sidenav -->
