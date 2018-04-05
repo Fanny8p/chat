@@ -1,4 +1,4 @@
-<?php include('top.php') ?>
+<?php include('layout/head.php') ?>
 <?php include('server.php') ?>
 </head>
 
@@ -21,7 +21,7 @@
   		<button type="submit" class="btn" name="login_user">Login</button>
   	</div>
   	<p>
-  		Not yet a member? <a href="register.php">Sign up</a>
+  		Not yet a member? <a href="register.php" style="color:red">Sign up</a>
   	</p>
   </form>
 </body>

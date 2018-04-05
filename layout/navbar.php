@@ -10,8 +10,9 @@
         </a>
       <li>
 
+  <?php include('./php/insert_chatroom.php'); ?>
   <?php include('./php/get_chatrooms.php'); ?>
-    <?php foreach($chatrooms as $chatroom){ ?>
+  <?php foreach($chatrooms as $chatroom){ ?>
       <li>
         <a href="chatroom?id=<?php echo $chatroom['id']; ?>" style="color:white; font-size: 1em;"><?php echo $chatroom['name']; ?></a>
       </li>
