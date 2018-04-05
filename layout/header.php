@@ -45,13 +45,13 @@ while($data = mysqli_fetch_assoc($req))
 
     // on affiche les informations de l'enregistrement en cours 
 
-    echo'<a style="color:white; font-size: 1em;">'.$data['name'].'</a>'; 
+    echo'<a href="#" style="color:white; font-size: 1em;">'.$data['name'].'</a>'; 
 
     }
     ?>
 
       
-     <form id="messageForm" method=post>
+     <form class="input_room" id="messageForm" method=post>
        <input id="name" name="name" type="text">
        <input id="send" type="submit" value="Send">
        <div id="serverRes"></div>
