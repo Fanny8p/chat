@@ -71,7 +71,7 @@ while($data = mysqli_fetch_assoc($req))
 </li>
 
     <li class="nav-item dropdown">
-    <a style="color:white;" class="nav-link dropdown-toggle" data-toggle="dropdown" href="#" role="button" aria-haspopup="true" aria-expanded="false"><i class="fas fa-cog"></i></a>
+    <a class="nav-link dropdown-toggle" data-toggle="dropdown" href="#" role="button" aria-haspopup="true" aria-expanded="false"><i class="fas fa-cog"></i></a>
     <div class="dropdown-menu">
       <a class="dropdown-item" href="#">View members</a>
       <a class="dropdown-item" href="#">Add members to room</a>
