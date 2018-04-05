@@ -1,6 +1,6 @@
 <?php
 session_start();
-
+ini_set("display_errors",1);
 // initializing variables
 $username = "";
 $email    = "";
@@ -68,7 +68,9 @@ if (isset($_POST['login_user'])) {
     $query = "SELECT * FROM users WHERE username='$username' AND password='$password'";
     $results = mysqli_query($db, $query);
     if (mysqli_num_rows($results) == 1) {
+      $user=mysqli_fetch_assoc($results);
       $_SESSION['username'] = $username;
+      $_SESSION['user_id'] = $user["id"]; //quand la pers se connecte on stock son user name et ID 
       $_SESSION['success'] = "You are now logged in";
       header('location: index.php');
     }else {

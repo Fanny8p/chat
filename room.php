@@ -1,11 +1,15 @@
 <?php
+session_start();
 $title = "";
 $description = "Ma description";
+var_dump($_SESSION);
 ?>
 
 <?php include_once("layout/header.php"); ?>
 <?php
+
  $chatroom_id = $_GET["id"];
+ $user_id = $_SESSION["user_id"];
     // initializing variables
 $message = "";
 $time    = "";
@@ -18,14 +22,13 @@ if(!empty($_POST)){
 
   $message = $_POST['message'];
   $time = date("Y-m-d H:i");
-
   if (empty($message)) {
   	array_push($errors, "message is required");
   }
  
   if (count($errors) == 0) {
-    $query = "INSERT INTO message (message,time,chatroom_id) 
-    VALUES('$message', '$time' , '$chatroom_id')";
+    $query = "INSERT INTO message (message,time,chatroom_id,user_id) 
+    VALUES('$message', '$time' , '$chatroom_id' , '$user_id')";
   $stmt= $dbh->prepare($query);
   $stmt->execute();
   }
@@ -36,7 +39,7 @@ if(!empty($_POST)){
  //afficher un message sur le tchat
 
 // on crée la requête SQL 
-$sql = "SELECT message, time FROM message WHERE chatroom_id=$chatroom_id"; 
+$sql = "SELECT message.message, message.time, users.username FROM message JOIN users ON users.id = message.user_id WHERE chatroom_id=$chatroom_id"; 
 
 // on envoie la requête 
 $req = mysqli_query($db,$sql) or die('Erreur SQL !<br>'.$sql.'<br>'.mysqli_error($db)); 
@@ -46,7 +49,9 @@ while($data = mysqli_fetch_assoc($req))
     { 
     // on affiche les informations de l'enregistrement en cours 
     echo'<div>'.$data['time'].'</div>'; 
+    echo'<div><b>'.$data['username'].'</b></div>';
     echo'<div><b>'.$data['message'].'</b></div>';
+   
     } 
 
 ?> 
