@@ -12,7 +12,9 @@ $req = mysqli_query($db,$sql) or die('Erreur SQL !<br>'.$sql.'<br>'.mysqli_error
 
 // on fait une boucle qui va faire un tour pour chaque enregistrement 
 while($data = mysqli_fetch_assoc($req)) 
-    { 
+    {	$emoji_replace = array(':)',':-)','(angry)',':3',":'(",':|',':(',':-(', ';)',';-)');
+		$emoji_new = array('<img src ="emojis/emo_smile.png"/>','<img src ="emojis/emo_smile.png"/>','<img src ="emojis/emo_angry.png"/>','<img src ="emojis/emo_cat.png"/>','<img src ="emojis/emo_cry.png"/>','<img src ="emojis/emo_noreaction.png"/>','<img src ="emojis/emo_sad.png"/>','<img src ="emojis/emo_sad.png"/>','<img src ="emojis/emo_wink.png"/>','<img src ="emojis/emo_wink.png"/>');
+		$data['message'] = str_replace($emoji_replace, $emoji_new, $data['message']);
     // on affiche les informations de l'enregistrement en cours 
     echo'<div>'.$data['time'].'</div>'; 
     echo'<div>'.$data['username'].'</div>';
