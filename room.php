@@ -53,7 +53,6 @@ while($data = mysqli_fetch_assoc($req))
     echo'<div>'.$data['time'].'</div>'; 
     echo'<div><b>'.$data['username'].'</b></div>';
     echo'<div><b>'.$data['message'].'</b></div>';
-   
     } 
 
 ?> 
