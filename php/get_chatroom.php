@@ -1,3 +1,5 @@
 <?php
-//CHERCHE UNE CHATROOM EN PARTICULIER AVEC UN ID avec un $id
-$user = "SELECT user WHERE 'id' = $id";?>
+$id = $_GET['id'];
+$sth = $dbh->prepare('SELECT * FROM chatroom WHERE id = $id');
+$sth->execute();
+$user = $sth->fetch(PDO::FETCH_ASSOC);

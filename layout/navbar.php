@@ -3,11 +3,9 @@
     <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">&times;</a>
     <ul>
       <li>
-        <a href="#">
           <?php  if (isset($_SESSION['username'])) : ?>
-                  <p><strong><?php echo $_SESSION['username']; ?></strong></p>
+                  <a href="user.php?id=<?php echo $_SESSION['user_id']; ?>"><p><strong><?php echo $_SESSION['username']; ?></strong></p></a>
           <?php endif ?>
-        </a>
       <li>
 
   <?php include('./php/insert_chatroom.php'); ?>
