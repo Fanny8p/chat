@@ -6,8 +6,9 @@
 }
 
 body, html {
+    position: relative;
     width: 100%;
-    height: auto;
+    height: 100%;
     min-height: 100%;
 }
 
@@ -35,17 +36,6 @@ iframe, video {
 h1, h2, h3, h4, h5, h6 {
     font-size: 16px;
     font-weight: normal;
-}
-
-
-footer {
-    position: static;
-    left: 0;
-    bottom: 0;
-    width: 100%;
-    background-color: grey;
-    color: white;
-    text-align: center;
 }
 
 
@@ -97,4 +87,10 @@ footer {
 @media screen and (max-height: 450px) {
     .sidenav {padding-top: 15px;}
     .sidenav a {font-size: 18px;}
+}
+
+
+.btn {
+    &{
+    border-shadow: 0px 0px 20px #fff}
 }

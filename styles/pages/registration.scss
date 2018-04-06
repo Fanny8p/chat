@@ -1,61 +1,61 @@
-/*
-.header {
-  width: 30%;
-  margin: 50px auto 0px;
+body#home {
+    background-image: url("/chat/image/back_index.jpg");
+    background-repeat: repeat;
+    background-attachment: fixed;
+    background-size: cover;
+    -webkit-animation: backgroundScroll 15s linear 1;
+    -webkit-animation-fill-mode: forwards;
+    animation: backgroundScroll 15s linear 1;
+    animation-fill-mode: forwards;
+}
+
+@-webkit-keyframes backgroundScroll {
+from {background-position: 0 0;}
+to {background-position: -180px 0px;}
+}
+
+@keyframes backgroundScroll {
+from {background-position: 0 0;}
+to {background-position: -180px 0px;}
+
+}
+
+/* Block formulaire */
+
+.fdb-block#first{
+    & {background: none;
+       top: 5%;
+       padding-top: 50px;}
+  }
+
+.fdb-block .fdb-box {
+  background: #1e222d;
+  box-shadow: 0px 0px 50px rgba(0, 0, 0, .5);
+}
+
+.fdb-block .fdb-touch{
+    border-top: solid 5px #00dfa8;
+    &#register {
+      border-top: solid 5px #00DCDF;
+    }
+  }
+
+.fdb-block .text-h1, .fdb-block h1 {
   color: white;
-  background: #5F9EA0;
-  text-align: center;
-  border: 1px solid #B0C4DE;
-  border-bottom: none;
-  border-radius: 10px 10px 0px 0px;
-  padding: 20px;
+  font-weight: 800;
 }
-form, .content {
-  width: 30%;
-  margin: 0px auto;
-  padding: 20px;
-  border: 1px solid #B0C4DE;
-  background: white;
-  border-radius: 0px 0px 10px 10px;
-}
-.input-group {
-  margin: 10px 0px 10px 0px;
-}
-.input-group label {
-  display: block;
-  text-align: left;
-  margin: 3px;
-}
-.input-group input {
-  height: 30px;
-  width: 93%;
-  padding: 5px 10px;
-  font-size: 16px;
-  border-radius: 5px;
-  border: 1px solid gray;
-}
-.btn {
-  padding: 10px;
-  font-size: 15px;
-  color: white;
-  background: #5F9EA0;
-  border: none;
-  border-radius: 5px;
-}
-.error {
-  width: 92%; 
-  margin: 0px auto; 
-  padding: 10px; 
-  border: 1px solid #a94442; 
-  color: #a94442; 
-  background: #f2dede; 
-  border-radius: 5px; 
-  text-align: left;
-}
-.success {
-  color: #3c763d; 
-  background: #dff0d8; 
-  border: 1px solid #3c763d;
-  margin-bottom: 20px;
-}
-*/
+
+.form-control {
+    border-radius: 1.25rem;
+    background: none;
+    border: 3px solid #00dfa8;
+    box-shadow: 0px 0px 5px rgba(0, 223, 168, .5);
+
+  }
+/* 
+  .form-control {
+    &__2 {border: 3px solid #00DCDF;
+    border-radius: 1.25rem;
+    box-shadow: 0px 0px 5px rgba(82, 170, 180, .5);
+    background: none;}
+  } */
