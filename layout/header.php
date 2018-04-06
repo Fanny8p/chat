@@ -1,5 +1,7 @@
 <?php include('./php/db.php'); ?>
 <?php include('./php/session_start.php'); ?>
+<?php include_once("php/get_user.php"); ?>
+
 
 
 <!doctype html>

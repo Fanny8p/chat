@@ -13,13 +13,19 @@ $pseudo = $_POST['name'];
 $birthday = $_POST['birthday'];
 $avatar = $_FILES['avatar']['name'];
 
+//MOVE IMAGE TO SERVER FOLDER
+move_uploaded_file($_FILES['avatar']['tmp_name'], "../image/$name");
+
 //UPDATE USER INFORMATIONS
-$PDOStatement = $dbh->prepare("UPDATE users SET pseudo = :pseudo, birthday = :birthday, avatar = :avatar WHERE id ='. $id");
-$PDOStatement->bindParam(":pseudo", $pseudo);
-$PDOStatement->bindParam(":birthday", $birthday); 
-$PDOStatement->bindParam(":avatar", $avatar);
+$stmt = $dbh->prepare('UPDATE users SET 
+	username = :pseudo, 
+	birthday = :birthday, 
+	image = :avatar 
+ WHERE id ='. $id);
+$stmt->bindParam(":pseudo", 	$pseudo);
+$stmt->bindParam(":birthday", 	$birthday); 
+$stmt->bindParam(":avatar", 	$avatar);
+$result = $stmt->execute();
 
-$PDOStatement->execute(); // Cette méthode retourne true ou false, indiquant si la requête a exécuté.
-
-//REDIRECT TO PROFIL -->
+//REDIRECT TO PROFIL
 header('Location: ../user.php?id='. $user['id']);

@@ -4,7 +4,10 @@
     <ul>
       <li>
           <?php  if (isset($_SESSION['username'])) : ?>
-                  <a href="user.php?id=<?php echo $_SESSION['user_id']; ?>"><p><strong><?php echo $_SESSION['username']; ?></strong></p></a>
+                  <a href="user.php?id=<?php echo $_SESSION['user_id']; ?>">
+                    <img class="nav_profil_img" src="image/<?php echo $user['image']; ?>" style="width:100%; display:; block;">
+                    <strong><?php echo $_SESSION['username']; ?></strong>
+                  </a>
           <?php endif ?>
       <li>
 
