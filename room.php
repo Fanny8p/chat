@@ -1,4 +1,5 @@
 <?php
+ini_set("display_errors",1);
 session_start();
 $title = "";
 $description = "Ma description";
@@ -45,23 +46,39 @@ $sql = "SELECT message.message, message.time, users.username FROM message JOIN u
 
 // on envoie la requête 
 $req = mysqli_query($db,$sql) or die('Erreur SQL !<br>'.$sql.'<br>'.mysqli_error($db)); 
-
+?>
+<div id=pouf>
+<?php
 // on fait une boucle qui va faire un tour pour chaque enregistrement 
 while($data = mysqli_fetch_assoc($req)) 
     { 
     // on affiche les informations de l'enregistrement en cours 
     echo'<div>'.$data['time'].'</div>'; 
-    echo'<div><b>'.$data['username'].'</b></div>';
+    echo'<div>'.$data['username'].'</div>';
     echo'<div><b>'.$data['message'].'</b></div>';
     } 
 
 ?> 
-
+</div>
   <form id="messageForm" method=post>
     <input id="message" name="message" type="text">
     <input id="send" type="submit" value="Send">
     <div id="serverRes"></div>
 
 </form>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+
+<script>
+	function getMessages(){
+		$.ajax({
+		url:"php/refresh.php?id=<?php echo $chatroom_id ?>"
+		})
+		.done(function(response){
+			$("#pouf").html(response);
+		});
+	}
+
+	window.setInterval(getMessages, 500);
+		</script>
 
 <?php include_once("layout/footer.php"); ?>
