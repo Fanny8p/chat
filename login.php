@@ -1,5 +1,5 @@
 <?php
-$title = "Accueil";
+$title = "Home";
 $description = "Ma description";
 ?>
 
@@ -16,7 +16,7 @@ $description = "Ma description";
         <div class="fdb-box fdb-touch">
           <div class="row">
             <div class="col">
-              <h1>Log In</h1>
+              <h1>Come back on<br><span>Link🗡Us</span></h1>
             </div>
           </div>
            <form method="post" action="login.php">

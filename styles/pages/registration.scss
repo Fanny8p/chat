@@ -22,27 +22,79 @@ to {background-position: -180px 0px;}
 
 /* Block formulaire */
 
-.fdb-block#first{
-    & {background: none;
+.fdb-block{
+    &#first {background: none;
        top: 5%;
        padding-top: 50px;}
   }
 
+.fdb-block .fdb-touch{
+    border-top: none;
+}
+
+/* The animation starts here */
 .fdb-block .fdb-box {
   background: #1e222d;
   box-shadow: 0px 0px 50px rgba(0, 0, 0, .5);
+  position: relative;
 }
 
-.fdb-block .fdb-touch{
-    border-top: solid 5px #00dfa8;
-    &#register {
-      border-top: solid 5px #00DCDF;
-    }
+.fdb-block .fdb-box:after {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  border-radius: 4px;
+  background: linear-gradient(120deg, #00F260, #0575E6, #00F260);
+  background-size: 300% 300%;
+  clip-path: polygon(0% 100%, 3px 100%, 3px 3px, calc(100% - 3px) 3px, calc(100% - 3px) calc(100% - 3px), 3px calc(100% - 3px), 3px 100%, 100% 100%, 100% 0%, 0% 0%);
+}
+
+.fdb-block .fdb-touch:after {
+  animation: frame-enter 1s forwards ease-in-out reverse, gradient-animation 4s ease-in-out infinite;
+}
+
+/* motion */
+@keyframes gradient-animation {
+  0% {
+    background-position: 15% 0%;
   }
+  50% {
+    background-position: 85% 100%;
+  }
+  100% {
+    background-position: 15% 0%;
+  }
+}
+
+@keyframes frame-enter {
+  0% {
+    clip-path: polygon(0% 100%, 3px 100%, 3px 3px, calc(100% - 3px) 3px, calc(100% - 3px) calc(100% - 3px), 3px calc(100% - 3px), 3px 100%, 100% 100%, 100% 0%, 0% 0%);
+  }
+  25% {
+    clip-path: polygon(0% 100%, 3px 100%, 3px 3px, calc(100% - 3px) 3px, calc(100% - 3px) calc(100% - 3px), calc(100% - 3px) calc(100% - 3px), calc(100% - 3px) 100%, 100% 100%, 100% 0%, 0% 0%);
+  }
+  50% {
+    clip-path: polygon(0% 100%, 3px 100%, 3px 3px, calc(100% - 3px) 3px, calc(100% - 3px) 3px, calc(100% - 3px) 3px, calc(100% - 3px) 3px, calc(100% - 3px) 3px, 100% 0%, 0% 0%);
+  }
+  75% {
+    -webkit-clip-path: polygon(0% 100%, 3px 100%, 3px 3px, 3px 3px, 3px 3px, 3px 3px, 3px 3px, 3px 3px, 3px 0%, 0% 0%);
+  }
+  100% {
+    -webkit-clip-path: polygon(0% 100%, 3px 100%, 3px 100%, 3px 100%, 3px 100%, 3px 100%, 3px 100%, 3px 100%, 3px 100%, 0% 100%);
+  }
+}
+
 
 .fdb-block .text-h1, .fdb-block h1 {
-  color: white;
+  color: grey;
+  font-size: 2em;
   font-weight: 800;
+  & span {
+    color: white;
+  }
 }
 
 .form-control {
@@ -50,12 +102,6 @@ to {background-position: -180px 0px;}
     background: none;
     border: 3px solid #00dfa8;
     box-shadow: 0px 0px 5px rgba(0, 223, 168, .5);
-
+    & ::placeholder {
+    color: red;}
   }
-/* 
-  .form-control {
-    &__2 {border: 3px solid #00DCDF;
-    border-radius: 1.25rem;
-    box-shadow: 0px 0px 5px rgba(82, 170, 180, .5);
-    background: none;}
-  } */

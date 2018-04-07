@@ -29,13 +29,16 @@
       </form>
 </div>
 <!-- Use any element to open the sidenav -->
-<span onclick="openNav()"><div style="color:tomato;"><i class="fas fa-bars"></i></i></div></span>
+<span onclick="openNav()"><div style="color:#528bff;"><i class="fas fa-bars"></i></i></div></span>
 
 
   <!-- Boostrap -->
   <ul class="nav nav-pills">
     <li class="nav-item">
-      <a style="color:white;" class="nav-link" href="#"></a>
+      <a style="color:#00dfa8; font-weight: 800;" class="nav-link" href="#"><?php echo $chatroom['name']; ?></a>
+    </li>
+    <li class="nav-item">
+      <a style="color:#818181;" class="nav-link" href="index.php">Accueil</a>
     </li>
     <li class="nav-item dropdown">
       <a class="nav-link dropdown-toggle" data-toggle="dropdown" href="#" role="button" aria-haspopup="true" aria-expanded="false"><i class="fas fa-cog"></i></a>
@@ -45,7 +48,7 @@
         <a class="dropdown-item" href="#">Leave the room</a>
         <a class="dropdown-item" href="#">Account setting</a>
         <div class="dropdown-divider"></div>
-        <a class="dropdown-item" href="index.php?logout='1" style="color:red;">logout</a>
+        <a class="dropdown-item" href="index.php?logout='1" style="color:white;">Logout</a>
       </div>
     </li>
   </ul>

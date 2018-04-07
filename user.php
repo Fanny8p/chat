@@ -63,4 +63,5 @@ $description = "Define our profile";
 </script>
 
 
-<?php include_once("layout/footer.php"); ?>
+</body>
+</html>

@@ -8,10 +8,10 @@
   <div class="container">
     <div class="row justify-content-center">
       <div class="col-12 col-md-8 col-lg-7 col-xl-5 text-center">
-        <div class="fdb-box fdb-touch" id="register">
+        <div class="fdb-box fdb-touch">
           <div class="row">
             <div class="col">
-              <h1>Register</h1>
+              <h1>Welcome on<br><span>Link🗡Us</span></h1>
             </div>
           </div>
            <form method="post" action="register.php">
@@ -56,6 +56,10 @@
   </div>
 </section>
 
+<div class="animated-box in">
+  <h1>Animated border</h1>
+  <p>Without fixed width or static background</p>
+</div>
 </body>
 
 <?php include_once("layout/footer.php"); ?>
