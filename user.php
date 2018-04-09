@@ -21,7 +21,7 @@ $description = "Define our profile";
 
 		<div class="form-group">
 			<label for="input_image"></label>
-		<button id="change_avatar">
+			<button id="change_avatar">
 				<img src="image/<?php echo $user['image']; ?>" alt="Avatar de <?php echo $user['username']; ?>" style="width:200px">
 			</button>
 		    <input type="file" name="avatar" id="input_image" style="display: none">
