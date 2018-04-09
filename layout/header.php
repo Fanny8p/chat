@@ -14,3 +14,8 @@
       <?php include_once('navbar.php'); ?>
     </header>
     <main>
+
+<script>
+window.onblur = function () { document.title = 'Ooh don\'t go too far !'; }
+window.onfocus = function () { document.title = 'Ooh you\'re back ❤'; }
+</script>

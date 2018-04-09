@@ -3,7 +3,7 @@
   <div class="container">
     <div class="row text-center align-items-center">
       <div class="col-12 col-sm-6 col-md-4 text-sm-left">
-        <img alt="image" src="/chat/image/default.jpg" width="50px">
+        <img alt="image" src="/chat/image/logo/LINKUS_x.png" width="100px">
       </div>
 
       <div class="col-12 col-sm-6 col-md-4 mt-4 mt-sm-0 text-center text-sm-right text-md-center">

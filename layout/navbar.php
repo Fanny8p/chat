@@ -36,7 +36,7 @@
   <ul class="nav nav-pills">
     <li class="nav-item">
       <?php include('./php/get_chatroom.php'); ?>
-      <a style="color:#00dfa8; font-weight: 800;" class="nav-link" href="details_room.php?id=<?php echo $chatroom['id']; ?>"><?php echo $chatroom['name']; ?><i style="padding-left: 5px" class="fas fa-info-circle"></i></a>
+      <a style="color:#00dfa8; font-weight: 800;" class="nav-link" href="details.php?id=<?php echo $chatroom['id']; ?>"><?php echo $chatroom['name']; ?><i style="padding-left: 5px" class="fas fa-info-circle"></i></a>
     </li>
     <li class="nav-item">
       <a style="color:#818181;" class="nav-link" href="index.php">Accueil</a>

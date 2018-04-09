@@ -3,7 +3,10 @@ $title = "Details";
 $description = "Details of chatroom";
 ?>
 
-<?php include_once("layout/header.php"); ?>
+<?php include_once("layout/header.php");?>
+
+<!--ON RECUPERE LA CHATROOM-->
+<?php include_once("php/get_chatroom.php");?>
 
   <div class="container">
     <div class="row justify-content-center">
