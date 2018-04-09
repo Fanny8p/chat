@@ -29,9 +29,13 @@ if(!empty($_POST)){
  
   if (count($errors) == 0) {
     $query = "INSERT INTO message (message,time,chatroom_id,user_id) 
- VALUES('$message', '$time' , '$chatroom_id' , '$user_id')";
+ VALUES(:message, :time , :chatroom_id , :user_id)";
  
     $stmt= $dbh->prepare($query);
+    $stmt->bindParam(":message", $message);
+    $stmt->bindParam(":time", $time);
+    $stmt->bindParam(":chatroom_id", $chatroom_id);
+    $stmt->bindParam(":user_id", $user_id);
     $stmt->execute();
 }
 }

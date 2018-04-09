@@ -11,8 +11,9 @@ if (empty($name)) {
 
 if (count($errors) == 0) {
   $query = "INSERT INTO chatroom (name) 
-  VALUES('$name')";
+  VALUES(:name)";
 $stmt= $dbh->prepare($query);
+$stmt->bindParam(":name", $name);
 $stmt->execute();
 }
 }
