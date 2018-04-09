@@ -52,6 +52,11 @@ $description = "Define our profile";
 			<input type="text" class="form-control" value="<?php echo $user['city']; ?>" placeholder="city" name="city" id="city">
 		</div>
 
+		<div class="form-group">
+			<label>ZIP Code</label>
+			<input type="text" pattern="[0-9]{5}" class="form-control" value="<?php echo $user['zipcode']; ?>" placeholder="zipcode" name="zipcode" id="zipcode">
+		</div>
+
 
 		<div class="form-group">
 		    <input class="btn btn-primary" type="submit">
