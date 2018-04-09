@@ -35,6 +35,7 @@
   <!-- Boostrap -->
   <ul class="nav nav-pills">
     <li class="nav-item">
+      <?php include('./php/get_chatroom.php'); ?>
       <a style="color:#00dfa8; font-weight: 800;" class="nav-link" href="#"><?php echo $chatroom['name']; ?></a>
     </li>
     <li class="nav-item">
