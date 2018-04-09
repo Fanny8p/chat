@@ -9,21 +9,31 @@ include('db.php');
 include('get_auth_user.php');
 
 //GET FORM VALUES
-$pseudo = $_POST['name'];
+$firstname = $_POST['firstname'];
+$lastname = $_POST['lastname'];
 $birthday = $_POST['birthday'];
+$city = $_POST['city'];
+$pseudo = $_POST['name'];
 $avatar = $_FILES['avatar']['name'];
+
 
 //MOVE IMAGE TO SERVER FOLDER
 move_uploaded_file($_FILES['avatar']['tmp_name'], "../image/$name");
 
 //UPDATE USER INFORMATIONS
-$stmt = $dbh->prepare('UPDATE users SET 
-	username = :pseudo, 
-	birthday = :birthday, 
-	image = :avatar 
+$stmt = $dbh->prepare('UPDATE users SET  
+	firstname = :firstname,
+	lastaname = :lastaname, 
+	birthday = :birthday,
+	city = 	:city,  
+	username = :pseudo,
+	image = :avatar
  WHERE id ='. $id);
+$stmt->bindParam(":firstname", 	$firstname); 
+$stmt->bindParam(":lastname", 	$lastname); 
+$stmt->bindParam(":birthday", 	$birthday);
+$stmt->bindParam(":city", 		$city); 
 $stmt->bindParam(":pseudo", 	$pseudo);
-$stmt->bindParam(":birthday", 	$birthday); 
 $stmt->bindParam(":avatar", 	$avatar);
 $result = $stmt->execute();
 
