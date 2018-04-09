@@ -18,7 +18,7 @@ $zipcode = $_POST['zipcode'];
 $avatar = $_FILES['avatar']['name'];
 
 //MOVE IMAGE TO SERVER FOLDER
-move_uploaded_file($_FILES['avatar']['tmp_name'], "../image/$name");
+move_uploaded_file($_FILES['avatar']['tmp_name'], "/chat/image/$name");
 
 //UPDATE USER INFORMATIONS
 $stmt = $dbh->prepare('UPDATE users SET 
