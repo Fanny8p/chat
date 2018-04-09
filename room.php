@@ -16,8 +16,8 @@ $description = "Ma description";
 
 
     <li>
-      <p><?php echo $message['message']; ?></p>
       <small>écrit par <?php echo $message['username']; ?> a <?php echo $message['time']; ?></small>
+      <p><?php echo $message['message']; ?></p>
       </li>
       <hr>
   <?php } ?>
@@ -46,7 +46,7 @@ $description = "Ma description";
     <script>
       function getMessages(){
         $.ajax({
-        url:"php/refresh.php?id=<?php echo $chatroom_id ?>"
+        url:"php/refresh.php?id=<?php echo $_GET["id"] ?>"
         })
         .done(function(response){
           $("#pouf").html(response);

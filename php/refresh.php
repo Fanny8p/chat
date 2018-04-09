@@ -5,10 +5,12 @@
 include ("db.php");
  
 // on crée la requête SQL 
-$sql = "SELECT message.message, message.time, users.username FROM message JOIN users ON users.id = message.user_id WHERE chatroom_id=$chatroom_id"; 
+$sql = "SELECT message.message, message.time, users.username FROM message JOIN users ON users.id = message.user_id WHERE chatroom_id= :id')"; 
 
-// on envoie la requête 
-$req = mysqli_query($db,$sql) or die('Erreur SQL !<br>'.$sql.'<br>'.mysqli_error($db)); 
+$stmt= $dbh->prepare($query);
+$stmt->bindParam(":id", $id);
+$sth->execute();
+
 
 // on fait une boucle qui va faire un tour pour chaque enregistrement 
 while($data = mysqli_fetch_assoc($req)) 
