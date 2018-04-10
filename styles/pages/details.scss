@@ -1,0 +1,12 @@
+.head_details {
+	margin-top: 50px;
+	margin-bottom: 30px;
+	& hr {
+		background-color: red;
+		width: 30%;
+		height: 1px;
+		text-align: center;
+		margin-right: auto;
+		margin-left: auto;
+	}
+}
