@@ -10,16 +10,16 @@ include('get_auth_user.php');
 
 //GET FORM VALUES
 $avatar = $_FILES['avatar']['name'];
-$pseudo = $_POST['name'];
-$birthday = $_POST['birthday'];
-$firstname = $_POST['firstname'];
-$lastname = $_POST['lastname'];
-$city = $_POST['city'];
-$zipcode = $_POST['zipcode'];
+$pseudo = htmlspecialchars($_POST['name']);
+$birthday = htmlspecialchars($_POST['birthday']);
+$firstname = htmlspecialchars($_POST['firstname']);
+$lastname = htmlspecialchars($_POST['lastname']);
+$city = htmlspecialchars($_POST['city']);
+$zipcode = htmlspecialchars($_POST['zipcode']);
 
 
 //MOVE IMAGE TO SERVER FOLDER
-move_uploaded_file($_FILES['avatar']['tmp_name'], "/chat/image/$name");
+move_uploaded_file($_FILES['avatar']['tmp_name'], "../image/$avatar");
 
 //UPDATE USER INFORMATIONS
 $stmt = $dbh->prepare('UPDATE users SET 

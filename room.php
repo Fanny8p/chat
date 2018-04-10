@@ -5,9 +5,15 @@ $description = "Ma description";
 
 <?php include_once("layout/header.php"); ?>
 
-<?php include_once("php/get_messages.php"); ?>
+<br>
+<br>
+<br>
+
 <div class="container">
-  <ul id="pouf">
+  <div class="row">
+    <div class="col-12 col-md-6 col-lg-8">
+<?php include_once("php/get_messages.php"); ?>
+  <ul id="pouf" class="message_box">
   <?php foreach ($messages as $message) { ?>
 
 <?php $emoji_replace = array(':)',':-)','(angry)',':3',":'(",':|',':(',':-(', ';)',';-)');
@@ -15,27 +21,40 @@ $description = "Ma description";
       $message['message'] = str_replace($emoji_replace, $emoji_new, $message['message']); ?>
 
 
-    <li data-id="<?php echo $message['id']; ?>">
+    <li>
+      <hr>
       <small>écrit par <?php echo $message['username']; ?> a <?php echo $message['time']; ?></small>
       <p><?php echo $message['message']; ?></p>
-      <hr>
       </li>
-      
+
   <?php } ?>
   </ul>
-  
-  <br>
-  <br>
-  <br>
+
   <hr>
-
-
     <form id="messageForm" method="post" action="php/send_message.php">
       <input id="message" name="message" type="text">
       <input id="chatroom_id" name="chatroom_id" type="hidden" value="<?php echo $_GET["id"]?>" >
       <input id="send" type="submit" value="Send">
       <div id="serverRes"></div>
     </form>
+      </div>
+
+        <div class="col-12 col-md-6 col-lg-4">
+
+        <aside>
+          //description
+
+ <br>
+  <br>
+  <br>
+  <br>
+  <br>
+
+          //liste des utilisateurs
+        </aside>
+
+        </div>
+  </div>
 </div>
 
 
@@ -52,6 +71,10 @@ $description = "Ma description";
       }
 
       window.setInterval(getMessages, 2000);
+    </script>
+
+    <script>
+      $('#your_div_id').scrollTop($('#your_div_id')[0].scrollHeight);
     </script>
 
   </body>
