@@ -21,7 +21,7 @@ $description = "Ma description";
       $message['message'] = str_replace($emoji_replace, $emoji_new, $message['message']); ?>
 
 
-    <li>
+    <li data-id="<?php echo $message['id']; ?>">
       <hr>
       <small>écrit par <?php echo $message['username']; ?> a <?php echo $message['time']; ?></small>
       <p><?php echo $message['message']; ?></p>
@@ -42,15 +42,29 @@ $description = "Ma description";
         <div class="col-12 col-md-6 col-lg-4">
 
         <aside>
-          //description
+          <div class="head_details">
+          <h1>Room</h1>
+          <h1 style="color: #00dfa8;">"<?php echo $chatroom['name']; ?>"</h1>
+          <hr>
+          </div>
+          <p><?php echo $chatroom['description']; ?></p>
+          <div class="member_owner">
+          <img src="image/<?php echo $user['image']; ?>" class="rounded-circle" alt="Avatar de <?php echo $user['username']; ?>">
+          <p><?php echo $_SESSION['username']; ?> -owner</p>
+          </div>
 
- <br>
-  <br>
-  <br>
-  <br>
-  <br>
-
-          //liste des utilisateurs
+          <div class="users_room">
+          <h2>Members list</h2>
+          <div class="users_image">
+          <?php include ("php/get_users.php"); ?>
+          <?php foreach($users as $user){ ?>
+          <img class="rounded-circle" src="image/<?php echo $user['image']; ?>" style="width: 50px;">
+          </div>
+          <div class="users_caption">
+          <p><?php echo $user['username']; ?></p>
+          <?php } ?>
+          </div>
+          </div>
         </aside>
 
         </div>
@@ -67,15 +81,17 @@ $description = "Ma description";
         })
         .done(function(response){
           $("#pouf").append(response);
+          var objDiv = $('#pouf');
+    if (objDiv.length > 0){
+        objDiv[0].scrollTop = objDiv[0].scrollHeight;
+    }
         });
       }
 
       window.setInterval(getMessages, 2000);
     </script>
 
-    <script>
-      $('#your_div_id').scrollTop($('#your_div_id')[0].scrollHeight);
-    </script>
+
 
   </body>
 </html>
