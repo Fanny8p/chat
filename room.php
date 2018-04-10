@@ -15,18 +15,15 @@ $description = "Ma description";
       $message['message'] = str_replace($emoji_replace, $emoji_new, $message['message']); ?>
 
 
-    <li>
+    <li data-id="<?php echo $message['id']; ?>">
       <small>écrit par <?php echo $message['username']; ?> a <?php echo $message['time']; ?></small>
       <p><?php echo $message['message']; ?></p>
-      </li>
       <hr>
+      </li>
+      
   <?php } ?>
   </ul>
-
-
-
-  <br>
-  <br>
+  
   <br>
   <br>
   <br>
@@ -45,15 +42,16 @@ $description = "Ma description";
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
     <script>
       function getMessages(){
+        var dernier=$("#pouf li").last().attr("data-id");
         $.ajax({
-        url:"php/refresh.php?id=<?php echo $_GET["id"] ?>"
+        url:"php/refresh.php?id=<?php echo $_GET["id"] ?>&dernier="+dernier
         })
         .done(function(response){
-          $("#pouf").html(response);
+          $("#pouf").append(response);
         });
       }
 
-      window.setInterval(getMessages, 500);
+      window.setInterval(getMessages, 2000);
     </script>
 
   </body>
