@@ -8,6 +8,12 @@ $description = "Details of chatroom";
 <!--ON RECUPERE LA CHATROOM-->
 <?php include_once("php/get_chatroom.php");?>
 
+
+  <ul class="nav justify-content-end">
+  <li class="nav-item">
+    <a class="nav-link active" href="room.php?id=<?php echo $chatroom['id']; ?>"><i style="color: #00dfa8" class="fas fa-times"></i></a>
+  </li>
+  </ul>
   <div class="container">
     <div class="row justify-content-center">
       <div class="col-12 col-lg-8 col-xl-6 text-center">
@@ -16,32 +22,30 @@ $description = "Details of chatroom";
           <h1 style="color: #00dfa8;">"<?php echo $chatroom['name']; ?>"</h1>
           <hr>
         </div>
-  			<p><?php echo $chatroom['description']; ?></p>
-        <div class="member_owner">
-          <img src="image/<?php echo $user['image']; ?>" class="rounded-circle" alt="Avatar de <?php echo $user['username']; ?>">
-          <p><?php echo $_SESSION['username']; ?> - admin?</p>
-        </div>
-
-        <div class="users_room">
-          <h2>Members list</h2>
-                <div class="users_image">
-                    <?php include ("php/get_users.php"); ?>
-                    <?php foreach($users as $user){ ?>
-                    <img class="rounded-circle" src="image/<?php echo $user['image']; ?>" style="width: 50px;">
-                  </div>
-                    <div class="users_caption">
-                        <p><?php echo $user['username']; ?></p>
-                        <?php } ?>
-                    </div>
-<!--         <p class="text-h3 mt-5">    
-  <div class="form-group">
+  			<textarea class="form-control" aria-label="With textarea" value="<?php echo $chatroom['description']; ?>" placeholder="Chatroom's description" name="description" id="description" required></textarea>
+    
+        <p class="text-h3 mt-5">    
+          <div class="form-group">
             <input class="btn btn-primary" type="submit">
           </div>
-        </p> -->
-        </div>
+        </p>
+
+<hr>
+  <h2>Delette the room</h2>
+    <p class="text-h3 mt-5">    
+      <div class="form-group">
+        <?php if($_SESSION['id'] === $chatroom['owner_id']) { ?>
+        <form action="php/delete_room.php" method="post">
+          <input type="hidden" name="id" value="<?php echo $chatroom['id']; ?>">
+          <button type="submit">Delette</button>
+        </form>
+        <?php } ?>
+
+      </div>
+    </p>
+      </div>
     </div>
   </div>
-</div>
 
 </body>
 </html>

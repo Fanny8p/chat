@@ -42,7 +42,7 @@ $description = "Ma description";
         <div class="col-12 col-md-6 col-lg-4">
 
         <aside>
-          <div class="head_details">
+          <div class="room_details">
           <h1>Room</h1>
           <h1 style="color: #00dfa8;">"<?php echo $chatroom['name']; ?>"</h1>
           <hr>
