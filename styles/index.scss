@@ -78,3 +78,114 @@ h1, h2, h3, h4, h5, h6 {
 ::-webkit-scrollbar-thumb:hover {
     background: #00dfa8; 
 }
+
+
+
+/* Ici commence le css pour la page d'accueil */
+
+#intro-wrapper {
+  width: 100%;
+  min-height: 5em;
+  display: flex;
+  align-items: center;
+  color: #00dfa8;
+}
+
+#intro {
+  width: 30em;
+  margin: 0 auto;
+  text-align: center;
+  & span {
+    font-family: "CaviarDreams", sans-serif;
+  }
+}
+
+.headline {
+  margin: 10px;
+}
+
+.headline.rotate-1 .word-wrapper {
+  display: inline-block;
+  perspective: 300px;
+}
+
+.headline.rotate-1 b {
+  opacity: 0;
+  transform-origin: 50% 100%;
+  transform: rotateY(180deg);
+  display: inline-block;
+  position: absolute;
+  left: 0;
+  top: 0;
+}
+
+.headline.rotate-1 b.is-visible {
+  position: relative;
+  opacity: 1;
+  transform: rotateY(0deg);
+  animation: rotate-1-in 1.2s;
+}
+
+.headline.rotate-1 b.is-hidden {
+  transform: rotateY(180deg);
+  animation: rotate-1-out 1.2s;
+}
+
+@keyframes rotate-1-in {
+  0% {
+    transform: rotateY(180deg);
+    opacity: 0;
+  }
+  35% {
+    transform: rotateY(120deg);
+    opacity: 0;
+  }
+  65% {
+    opacity: 0;
+  }
+  100% {
+    transform: rotateY(360deg);
+    opacity: 1;
+  }
+}
+ 
+@keyframes rotate-1-out {
+  0% {
+    transform: rotateY(0deg);
+    opacity: 1;
+  }
+  35% {
+    transform: rotateY(-30deg);
+    opacity: 1;
+  }
+  65% {
+    opacity: 0;
+  }
+  100% {
+    transform: rotateY(180deg);
+    opacity: 0;
+  }
+}
+
+
+/* conversations */
+
+.conversations {
+    display: inherit;
+    background: rgba(0, 0, 0, 0.1);
+    border-radius: 10px;
+}
+
+.img_conv {
+    width: 20%;
+    padding: 20px;
+    overflow: hidden;
+    & img {
+        width: 100%;
+    }
+}
+
+.text_conv {
+    width: 80%;
+    padding: 20px;
+}
