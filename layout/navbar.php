@@ -23,8 +23,8 @@
       <hr>
 
       <form class="input_room" id="messageForm" method=post>
-        <input id="name" name="name" type="text">
-        <input id="send" type="submit" value="Send">
+        <input class="form-control" id="name" name="name" type="text" placeholder="New room">
+        <input class="btn_menu" id="send" type="submit" value="Send">
         <div id="serverRes"></div>
       </form>
 </div>
