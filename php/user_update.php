@@ -31,13 +31,13 @@ $stmt = $dbh->prepare('UPDATE users SET
 	city = :city, 
 	zipcode = :zipcode 
 
- WHERE id ='. $id);
+	WHERE id ='. $id);
 $stmt->bindParam(":avatar", 	$avatar);
 $stmt->bindParam(":pseudo", 	$pseudo);
 $stmt->bindParam(":birthday", 	$birthday); 
 $stmt->bindParam(":firstname", 	$firstname);
 $stmt->bindParam(":lastname", 	$lastname); 
-$stmt->bindParam(":city", 	$city); 
+$stmt->bindParam(":city", 		$city); 
 $stmt->bindParam(":zipcode", 	$zipcode); 
 
 $result = $stmt->execute();

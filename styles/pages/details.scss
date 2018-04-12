@@ -2,11 +2,21 @@
 	margin-top: 50px;
 	margin-bottom: 30px;
 	& hr {
-		background-color: red;
+    	border-bottom: solid #6b6f7a 1px;
 		width: 30%;
 		height: 1px;
 		text-align: center;
 		margin-right: auto;
 		margin-left: auto;
 	}
+}
+
+
+.delete {
+	background: linear-gradient(to right bottom, #cf3636, #d43c3c, #d94241, #de4747, #e34d4d);
+	border: none;
+}
+
+.admin {
+	color: #FFF;
 }

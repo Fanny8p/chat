@@ -80,11 +80,25 @@
     .sidenav a {font-size: 18px;}
 }
 
+.input_room {
+    display: flex;
+    padding: 0px 20px 0px 20px;
+}
+
 .input_menu {
     padding-left: 32px;
     width: 11em;
     background-color: #191c25;
     border: none;
+}
+
+.btn_menu {
+    background-color: #1f69ff;
+    border: none;
+    color: #FFF;
+    border-radius: 3px;
+    margin-left: 10px;
+    padding: 0px 5px 0px 5px;
 }
 
 input[type=text] {

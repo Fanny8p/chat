@@ -7,13 +7,14 @@ include('db.php');
 
 //GET FORM VALUES
 $description = $_POST['description'];
+$id = $_POST['chatroom_id'];
 
 //UPDATE CHATROOMS INFORMATIONS
 $stmt = $dbh->prepare('UPDATE chatroom SET 
-	description = :description,
- WHERE id ='. $id);
+	description = :description
+	WHERE id = '. $id);
 $stmt->bindParam(":description", 	$description);
 $result = $stmt->execute();
 
 //REDIRECT TO PROFIL
-header('Location: ../details.php?id='. $chatroom['id']);
+header('Location: ../details.php?id='. $id);

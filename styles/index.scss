@@ -1,81 +1,85 @@
 @font-face {
  font-family: "CaviarDreams";
  src:   url("/chat/fonts/CaviarDreams.ttf") format("truetype"),
-        url("/chat/fonts/CaviarDreams_Bold.ttf") format("truetype"),
-        url("/chat/fonts/CaviarDreams_BoldItalic.ttf") format("truetype"),
-        url("/chat/fonts/CaviarDreams_Italic.ttf") format("truetype");
+ url("/chat/fonts/CaviarDreams_Bold.ttf") format("truetype"),
+ url("/chat/fonts/CaviarDreams_BoldItalic.ttf") format("truetype"),
+ url("/chat/fonts/CaviarDreams_Italic.ttf") format("truetype");
 }
 
 * {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-    font-family: sans-serif;
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "CaviarDreams", sans-serif;
 }
 
 body, html {
-    position: relative;
-    width: 100%;
-    height: 100%;
-    min-height: 100%;
-    background-color: #1e222d;
+  position: relative;
+  width: 100%;
+  height: 100%;
+  min-height: 100%;
+  background-color: #1e222d;
 }
 
-p, a, b, strong, i, u, em, span{
-    font-size: 16px;
-    color: inherit;
-    text-decoration: none;
-    font-family: "CaviarDreams", sans-serif;
+p, a, b, strong, i, u, em, span, small{
+  font-size: 16px;
+  color: inherit;
+  text-decoration: none;
+  font-family: "CaviarDreams", sans-serif;
 }
 
 small {
-    font-style: italic;
+  font-style: italic;
 }
 
 ul, ol, li {
-    list-style-type: none;
+  list-style-type: none;
 }
 
 img {
 
-    height: auto;
-    display: block;
+  height: auto;
+  display: block;
 }
 iframe, video {
-    height: auto;
-    display: block;
-    width: 100%;
+  height: auto;
+  display: block;
+  width: 100%;
 }
 
 h1, h2, h3, h4, h5, h6 {
-    font-size: 16px;
-    font-family: "CaviarDreams", sans-serif;
-    font-weight: 800;
+  font-size: 16px;
+  font-family: "CaviarDreams", sans-serif;
+  font-weight: 800;
+}
+
+textarea, input, select, option {
+  font-family: inherit !important;
 }
 
 /* Barre de défilement personnalisée */
 
 /* width */
 ::-webkit-scrollbar {
-    width: 5px;
-    &:active {
-        width: 10px;
-    }
+  width: 5px;
+  &:active {
+    width: 10px;
+  }
 }
 
 /* Track */
 ::-webkit-scrollbar-track {
-    background: #353C50; 
+  background: #353C50; 
 }
 
 /* Handle */
 ::-webkit-scrollbar-thumb {
-    background: #818181;     
+  background: #818181;     
 }
 
 /* Handle on hover */
 ::-webkit-scrollbar-thumb:hover {
-    background: #00dfa8; 
+  background: #00dfa8; 
 }
 
 
@@ -145,7 +149,7 @@ h1, h2, h3, h4, h5, h6 {
     opacity: 1;
   }
 }
- 
+
 @keyframes rotate-1-out {
   0% {
     transform: rotateY(0deg);
@@ -168,97 +172,97 @@ h1, h2, h3, h4, h5, h6 {
 /* conversations */
 
 .section_home {
-    color: #818181;
-    margin: 20px 0px 20px 0px;
-    & hr {
-        padding: 20px 0px 20px 0px;
-        width: 30%;
-        margin-right: auto;
-        margin-left: auto;
-        border-bottom: solid #6b6f7a 1px;
-    }
+  color: #818181;
+  margin: 20px 0px 20px 0px;
+  & hr {
+    padding: 20px 0px 20px 0px;
+    width: 30%;
+    margin-right: auto;
+    margin-left: auto;
+    border-bottom: solid #6b6f7a 1px;
+  }
 }
 
 .conv {
-    background: rgba(129, 129, 129, 0.3);
-    border-radius: 10px;
-    padding: 20px;
-    margin: 20px 0px 50px 0px;
-    & h2 {
-        color: #818181;
-    }
+  background: rgba(129, 129, 129, 0.3);
+  border-radius: 10px;
+  padding: 20px;
+  margin: 20px 0px 50px 0px;
+  & h2 {
+    color: #818181;
+  }
 }
 
 .head_conv {
-    color: #00dfa8;
-    text-align: center;
+  color: #00dfa8;
+  text-align: center;
 }
 
 .corps_conv {
-    display: -webkit-box;
-    margin-top: 15px;
+  display: -webkit-box;
+  margin-top: 15px;
 }
 
 .img_conv {
-    width: 15%;
-    overflow: hidden;
-    & img {
-        width: 100%;
-    }
+  width: 15%;
+  overflow: hidden;
+  & img {
+    width: 100%;
+  }
 }
 
 .message_conv {
-    width: 80%;
-    color: #FFF;
-    margin-left: 20px;
-    & i {
-        float: right;
-        color: #00dfa8;
-    }
+  width: 80%;
+  color: #FFF;
+  margin-left: 20px;
+  & i {
+    float: right;
+    color: #00dfa8;
+  }
 }
 
 
 .create_conv {
-    text-align: center;
+  text-align: center;
 }
 
 .btn#create {
-    color: #FFF;
-    background-color: #00dfa8;
-    border-color: #00dfa8,
+  color: #FFF;
+  background-color: #00dfa8;
+  border-color: #00dfa8,
 }
 
 .card {
-    background-color: transparent;
+  background-color: transparent;
 }
 
 .card-deck {
-    margin-bottom: 100px;
+  margin-bottom: 100px;
 }
 
 .card-deck .card {
-    border: none;
-    color: #FFF;
+  border: none;
+  color: #FFF;
 }
 
 .card-body {
-    border-radius: 10px;
-    border: none;
-    & hr {
-        width: 30px;
-        border-bottom: solid rgba(250, 250, 250, 0.8) 2px;
-    }
+  border-radius: 10px;
+  border: none;
+  & hr {
+    width: 30px;
+    border-bottom: solid rgba(250, 250, 250, 0.8) 2px;
+  }
 }
 
 .card-body#cardfirst {
-    border-radius: 10px;
-    background-image: linear-gradient(to right bottom, #2c8efd, #2d94fe, #309aff, #359fff, #3ca5ff);
+  border-radius: 10px;
+  background-image: linear-gradient(to right bottom, #2c8efd, #2d94fe, #309aff, #359fff, #3ca5ff);
 }
 
 .card-body#second {
-    background-image: linear-gradient(to right bottom, #4d67fc, #536efd, #5a75fd, #607cfe, #6783fe);
+  background-image: linear-gradient(to right bottom, #4d67fc, #536efd, #5a75fd, #607cfe, #6783fe);
 }
 
 .card-body#third {
-    background-image: linear-gradient(to right bottom, #553bfc, #5e42fd, #6649fe, #6d50fe, #7457ff);
+  background-image: linear-gradient(to right bottom, #553bfc, #5e42fd, #6649fe, #6d50fe, #7457ff);
 }

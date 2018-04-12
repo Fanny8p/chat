@@ -9,14 +9,18 @@ $description = "Define our profile";
 <!--ON RECUPERE L UTILISATEUR-->
 <?php include_once("php/get_user.php"); ?>
 
-<div class="container">
+<div class="container" id="users">
+
+	<h1>Up your profil !</h1>
 		
 	<form action="php/user_update.php" method="POST" enctype="multipart/form-data" style="max-width: 600px; width: 100%; margin: auto;">
 
 		<div class="form-group">
 			<label for="input_image"></label>
-		<button id="change_avatar">
-				<img src="image/<?php echo $user['image']; ?>" alt="Avatar de <?php echo $user['username']; ?>" style="width:200px">
+		<button id="change_avatar" class="btn_img">
+				<div class="users_img">
+					<img  class="profil_img" src="image/<?php echo $user['image']; ?>" alt="Avatar de <?php echo $user['username']; ?>">
+				</div>
 			</button>
 		    <input type="file" name="avatar" id="input_image" style="display: none">
 		</div>

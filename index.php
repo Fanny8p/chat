@@ -3,7 +3,7 @@ $title = "Accueil";
 $description = "Ma description";
 ?>
 
-<?php include_once("layout/header_special.php"); ?>
+<?php include_once("layout/header.php"); ?>
 
   <section id="intro-wrapper">
     <div id="intro">
