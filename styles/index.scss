@@ -18,10 +18,10 @@ body, html {
     width: 100%;
     height: 100%;
     min-height: 100%;
-    background-color: #FFF;
+    background-color: #1e222d;
 }
 
-p, a, b, strong, i, u, em, {
+p, a, b, strong, i, u, em, span{
     font-size: 16px;
     color: inherit;
     text-decoration: none;
@@ -52,7 +52,6 @@ h1, h2, h3, h4, h5, h6 {
     font-family: "CaviarDreams", sans-serif;
     font-weight: 800;
 }
-
 
 /* Barre de défilement personnalisée */
 
@@ -89,15 +88,13 @@ h1, h2, h3, h4, h5, h6 {
   display: flex;
   align-items: center;
   color: #00dfa8;
+  margin: 60px 0px 60px 0px;
 }
 
 #intro {
   width: 30em;
   margin: 0 auto;
   text-align: center;
-  & span {
-    font-family: "CaviarDreams", sans-serif;
-  }
 }
 
 .headline {
@@ -170,22 +167,98 @@ h1, h2, h3, h4, h5, h6 {
 
 /* conversations */
 
-.conversations {
-    display: inherit;
-    background: rgba(0, 0, 0, 0.1);
+.section_home {
+    color: #818181;
+    margin: 20px 0px 20px 0px;
+    & hr {
+        padding: 20px 0px 20px 0px;
+        width: 30%;
+        margin-right: auto;
+        margin-left: auto;
+        border-bottom: solid #6b6f7a 1px;
+    }
+}
+
+.conv {
+    background: rgba(129, 129, 129, 0.3);
     border-radius: 10px;
+    padding: 20px;
+    margin: 20px 0px 50px 0px;
+    & h2 {
+        color: #818181;
+    }
+}
+
+.head_conv {
+    color: #00dfa8;
+    text-align: center;
+}
+
+.corps_conv {
+    display: -webkit-box;
+    margin-top: 15px;
 }
 
 .img_conv {
-    width: 20%;
-    padding: 20px;
+    width: 15%;
     overflow: hidden;
     & img {
         width: 100%;
     }
 }
 
-.text_conv {
+.message_conv {
     width: 80%;
-    padding: 20px;
+    color: #FFF;
+    margin-left: 20px;
+    & i {
+        float: right;
+        color: #00dfa8;
+    }
+}
+
+
+.create_conv {
+    text-align: center;
+}
+
+.btn#create {
+    color: #FFF;
+    background-color: #00dfa8;
+    border-color: #00dfa8,
+}
+
+.card {
+    background-color: transparent;
+}
+
+.card-deck {
+    margin-bottom: 100px;
+}
+
+.card-deck .card {
+    border: none;
+    color: #FFF;
+}
+
+.card-body {
+    border-radius: 10px;
+    border: none;
+    & hr {
+        width: 30px;
+        border-bottom: solid rgba(250, 250, 250, 0.8) 2px;
+    }
+}
+
+.card-body#cardfirst {
+    border-radius: 10px;
+    background-image: linear-gradient(to right bottom, #2c8efd, #2d94fe, #309aff, #359fff, #3ca5ff);
+}
+
+.card-body#second {
+    background-image: linear-gradient(to right bottom, #4d67fc, #536efd, #5a75fd, #607cfe, #6783fe);
+}
+
+.card-body#third {
+    background-image: linear-gradient(to right bottom, #553bfc, #5e42fd, #6649fe, #6d50fe, #7457ff);
 }
