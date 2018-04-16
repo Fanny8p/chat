@@ -28,28 +28,28 @@ $description = "Ma description";
     	</div>
         <div class="conv">
         	<div class="head_conv">	
-        		<span style="float: left;">Username</span><span>Name Room</span><span style="float: right;">Date & time</span>
+        		<span style="float: left;">Zelda</span><span>Hyrule</span><span style="float: right;">Date & time</span>
         	</div>
         	<div class="corps_conv">
         	<div class="img_conv">
-        		<img src="image/martine.jpg" class="rounded-circle">
+        		<img src="image/zelda.jpg" class="rounded-circle">
         	</div>        		
         	<div class="message_conv">
-        		<p> texte pour réaliser un livre spécimen de polices de texte. Il n'a pas fait que survivre cinq siècles.</p>
+        		<p>better hangover?</p>
         	  	<i class="fas fa-plus-circle"></i>
         	</div>
         	</div>
         </div>
         <div class="conv">
         	<div class="head_conv">	
-        		<span style="float: left;">Username</span><span>Name Room</span><span style="float: right;">Date & time</span>
+        		<span style="float: left;">Cloud</span><span>Name Room</span><span style="float: right;">Date & time</span>
         	</div>
         	<div class="corps_conv">
         	<div class="img_conv">
-        		<img src="image/martine.jpg" class="rounded-circle">
+        		<img src="image/avatar_a0cbba8bf449_128.jpg" class="rounded-circle">
         	</div>        		
         	<div class="message_conv">
-        		<p> texte pour réaliser un livre spécimen de polices de texte. Il n'a pas fait que survivre cinq siècles.</p>
+        		<p> I feel like I am gonna kick some monter's ass today who's with me?</p>
         	  	<i class="fas fa-plus-circle"></i>
         	</div>
         	</div>

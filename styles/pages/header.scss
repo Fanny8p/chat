@@ -31,6 +31,17 @@
 
 /* Le menu hamburger déroulant */
 /* The side navigation menu */
+.user_nav {
+    strong {
+    color: #00dfa8;
+    font-size: 0.8em;
+    }
+    img {
+        width: 150px;
+        height: 150px;
+    }
+}
+
 .sidenav {
     height: 100%; /* 100% Full-height */
     width: 0; /* 0 width - change this with JavaScript */

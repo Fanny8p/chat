@@ -63,8 +63,26 @@
 		font-size: 1em;
 		font-style: italic;
 	}
+	hr {
+		border-bottom: solid #6b6f7a 1px;
+		width: 30%;
+		height: 1px;
+		text-align: center;
+		margin-right: auto;
+		margin-left: auto;
+		margin-bottom: 50px;
+	}
+	img {
+		margin-top: 30px;
+	}
 }
 
+.users_room {
+	margin-top: 40px;
+	h2 {
+	color: #528bff;
+	}
+}
 
 .user_list_container {
 	display: flex;

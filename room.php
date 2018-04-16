@@ -49,8 +49,11 @@ $description = "Ma description";
         </div>
         <p><?php echo $chatroom['description']; ?></p>
         <div class="member_owner">
-          <img src="image/<?php echo $user['image']; ?>" class="rounded-circle" alt="Avatar de <?php echo $user['username']; ?>">
-          <p><?php echo $_SESSION['username']; ?> -owner</p>
+          <hr>
+          <h2>Who's talking ?</h2>
+          <?php include('php/get_chatroom.php') ?> 
+          <img src="image/<?php echo $chatroom['image']; ?>" class="rounded-circle" alt="Avatar de <?php echo $chatroom['username']; ?>">
+          <p><?php echo $chatroom['username']; ?> -owner</p>
         </div>
 
         <div class="users_room">
